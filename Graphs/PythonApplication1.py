@@ -16,10 +16,9 @@ def retorno (ação, data = '2019-08-07'):
     return ret*100
 
 carteira = ['KLBN11', 'POSI3', 'RAIL3', 'SAPR11', 'CPLE6']
+empresas = pd.DataFrame()
 
 for i in carteira:
-    df = carteira = {'Ação' : i, 'Volatilidade': vol(i), 'Retonos' : retorno(i)}
-    list1 = [df]
-    ações = pd.DataFrame(list1)
-    print(ações)
-
+    df = [i, vol(i), retorno(i)]
+    empresas.append(df)
+print(empresas)
